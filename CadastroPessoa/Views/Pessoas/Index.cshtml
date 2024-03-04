@@ -1,0 +1,36 @@
+﻿@model List<CadastroPessoa.Models.Domain.Pessoa>
+
+@{
+}
+
+<h1>Pessoas</h1>
+
+<table class='pessoasCadastro'>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Data Nascimento</th>
+            <th>Estado Civil</th>
+            <th>RG</th>
+            <th>CPF</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ( var pessoa in Model)
+        {
+            <tr>
+                <td>@pessoa.Id</td>
+                <td>@pessoa.Nome</td>
+                <td>@pessoa.Sobrenome</td>
+                <td>@pessoa.DataNascimento.ToString("dd-MM-yyyy")</td>
+                <td>@pessoa.EstadoCivil</td>
+                <td>@pessoa.RG</td>
+                <td>@pessoa.CPF</td>
+                <td><a href="Pessoas/View/@pessoa.Id">Visualizar</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
